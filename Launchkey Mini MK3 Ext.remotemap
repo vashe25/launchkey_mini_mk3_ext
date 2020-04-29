@@ -1,0 +1,69 @@
+Propellerhead Remote Mapping File
+
+File Format Version	1.0.0
+
+Control Surface Manufacturer	Novation
+
+Control Surface Model	Launchkey Mini MK3 Ext
+
+Map Version	1.0.0
+
+
+Scope	Propellerheads	Master Keyboard
+
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Modulation		Mod Wheel
+Map	Sustain		Damper Pedal
+
+Scope	Propellerheads	Reason Document
+
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+
+Map	Track Up		Target Next Track
+Map	Track Down		Target Previous Track
+Map	Shifted Record		Loop On/Off
+Map	Shifted Play		Stop
+Map	Play		Play
+Map	Record		Record
+Map	Session Pad 15		Move Loop One bar Left
+Map	Session Pad 16		Move Loop One bar Right
+
+
+
+Scope	Propellerheads	Record Document
+
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+
+Map	Track Up		Target Next Track
+Map	Track Down		Target Previous Track
+Map	Shifted Record		Loop On/Off
+Map	Shifted Play		Stop
+Map	Play		Play
+Map	Record		Record
+Map	Session Pad 15		Move Loop One bar Left
+Map	Session Pad 16		Move Loop One bar Right
+
+
+Scope	Propellerheads	Redrum Drum Computer
+
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+
+Map	Drum Pad 1		Selected Drum Toggle Step 1
+Map	Drum Pad 2		Selected Drum Toggle Step 2
+Map	Drum Pad 3		Selected Drum Toggle Step 3
+Map	Drum Pad 4		Selected Drum Toggle Step 4
+Map	Drum Pad 5		Selected Drum Toggle Step 5
+Map	Drum Pad 6		Selected Drum Toggle Step 6
+Map	Drum Pad 7		Selected Drum Toggle Step 7
+Map	Drum Pad 8		Selected Drum Toggle Step 8
+Map	Drum Pad 9		Selected Drum Toggle Step 9
+Map	Drum Pad 10		Selected Drum Toggle Step 10
+Map	Drum Pad 11		Selected Drum Toggle Step 11
+Map	Drum Pad 12		Selected Drum Toggle Step 12
+Map	Drum Pad 13		Selected Drum Toggle Step 13
+Map	Drum Pad 14		Selected Drum Toggle Step 14
+Map	Drum Pad 15		Selected Drum Toggle Step 15
+Map	Drum Pad 16		Selected Drum Toggle Step 16
