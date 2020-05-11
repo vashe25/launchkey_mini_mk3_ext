@@ -10,33 +10,33 @@ Map Version	1.0.0
 
 
 Scope	Propellerheads	Master Keyboard
-
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
-
 Map	Keyboard		Keyboard
 Map	Pitch Bend		Pitch Bend
 Map	Modulation		Mod Wheel
 Map	Sustain		Damper Pedal
 
+
 Scope	Propellerheads	Reason Document
-
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
-
-Map	Track Up		Target Next Track
-Map	Track Down		Target Previous Track
+Map	Track Up		Target Previous Track
+Map	Track Down		Target Next Track
+Map	Shift Cliplaunch 1		Select Prev Patch for Target Device
+Map	Shift Cliplaunch 2		Select Next Patch for Target Device
 Map	Shifted Record		Loop On/Off
 Map	Shifted Play		Stop
 Map	Play		Play
 Map	Record		Record
-Map	Session Pad 15		Move Loop One bar Left
-Map	Session Pad 16		Move Loop One bar Right
-
+Map	Session Pad 1		Target Track Mute
+Map	Session Pad 2		Target Track Solo
+Map	Session Pad 7		Goto Left Locator
+Map	Session Pad 8		Goto Right Locator
+Map	Session Pad 15		Move Loop Left
+Map	Session Pad 16		Move Loop Right
 
 
 Scope	Propellerheads	Record Document
-
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
-
 Map	Track Up		Target Next Track
 Map	Track Down		Target Previous Track
 Map	Shifted Record		Loop On/Off
@@ -48,9 +48,8 @@ Map	Session Pad 16		Move Loop One bar Right
 
 
 Scope	Propellerheads	Redrum Drum Computer
-
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
-
+Map	Cliplaunch 1		Run
 Map	Drum Pad 1		Selected Drum Toggle Step 1
 Map	Drum Pad 2		Selected Drum Toggle Step 2
 Map	Drum Pad 3		Selected Drum Toggle Step 3
@@ -67,3 +66,16 @@ Map	Drum Pad 13		Selected Drum Toggle Step 13
 Map	Drum Pad 14		Selected Drum Toggle Step 14
 Map	Drum Pad 15		Selected Drum Toggle Step 15
 Map	Drum Pad 16		Selected Drum Toggle Step 16
+
+
+Scope	Propellerheads	SubTractor Analog Synthesizer
+//	Control Surface Item	Key	Remotable Item	Scale	Mode	Groups
+Map	Device Knob 1		Filter Freq
+Map	Device Knob 2		Filter Res
+Map	Device Knob 3		Filter Env Amount
+Map	Device Knob 4		Osc1 Phase Diff
+Map	Device Knob 5		Osc1 Wave
+Map	Device Knob 6		FM Amount
+Map	Device Knob 7		LFO1 Rate
+Map	Device Knob 8		LFO1 Amount
+

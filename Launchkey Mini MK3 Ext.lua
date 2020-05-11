@@ -93,13 +93,13 @@ function remote_init(manufacturer, model)
 		-- 81
 		{name="Track Down", input="button"},
 		{name="Track Up", input="button"},
-		{name="Cliplaunch 1", input="button"},
-		{name="Cliplaunch 2", input="button"},
+		{name="Cliplaunch 1", input="button", output="value"},
+		{name="Cliplaunch 2", input="button", output="value"},
 		{name="Shift Cliplaunch 1", input="button"},
 		{name="Shift Cliplaunch 2", input="button"},
 		-- 87
-		{name="Play", input="button"},
-		{name="Record", input="button"},
+		{name="Play", input="button", output="value"},
+		{name="Record", input="button", output="value"},
 		{name="Shifted Play", input="button"},
 		{name="Shifted Record", input="button"},
 		-- 91
@@ -200,8 +200,8 @@ function remote_init(manufacturer, model)
 		{pattern="99 2E xx", name="Drum Pad 15", port=1},
 		{pattern="99 2F xx", name="Drum Pad 16", port=1},
 
-		{pattern="B0 66 ?<???x>", name="Track Down", port=1},
-		{pattern="B0 67 ?<???x>", name="Track Up", port=1},
+		{pattern="BF 66 ?<???x>", name="Track Down", port=1},
+		{pattern="BF 67 ?<???x>", name="Track Up", port=1},
 		{pattern="B0 68 ?<???x>", name="Cliplaunch 1", port=1},
 		{pattern="B0 69 ?<???x>", name="Cliplaunch 2", port=1},
 
@@ -250,6 +250,12 @@ function remote_init(manufacturer, model)
 		{name="Drum Pad 14", pattern="99 2D 0<00xx>", x="value*3"},
 		{name="Drum Pad 15", pattern="99 2E 0<00xx>", x="value*3"},
 		{name="Drum Pad 16", pattern="99 2F 0<00xx>", x="value*3"},
+
+		{name="Cliplaunch 1", pattern="B0 68 xx", x="value*125+2"},
+		{name="Cliplaunch 2", pattern="B0 69 xx", x="value*125+2"},
+
+		{name="Play", pattern="BF 73 xx", x="value*125+2"},
+		{name="Record", pattern="BF 75 xx", x="value*125+2"},
 	}
 	remote.define_auto_outputs(outputs)
 
