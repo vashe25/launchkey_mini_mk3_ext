@@ -208,7 +208,7 @@ function remote_init(manufacturer, model)
 		{pattern="BF 73 ?<???x>", name="Play", port=1},
 		{pattern="BF 75 ?<???x>", name="Record", port=1},
 
-		{pattern="<100x><0000> yy zz", name="Keyboard", port=2},
+		{pattern="<100x>? yy zz", name="Keyboard", port=2},
 		{pattern="e? xx yy", name="Pitch Bend", value="y*128 + x", port=2},
 		{pattern="b? 01 xx", name="Modulation", port=2},
 		{pattern="b? 40 xx", name="Sustain", port=2},
