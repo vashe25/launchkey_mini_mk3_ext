@@ -86,6 +86,9 @@ Map	Drum Pad 4		Button 4
 Scope	Propellerheads	Redrum Drum Computer
 //	Control Surface Item	Key	Remotable Item	Scale	Mode
 Map	Cliplaunch 1		Run
+Map	Device Knob 1		Selected Drum
+Map	Device Knob 2		Pattern Select in Bank
+Map	Device Knob 3		Bank Select
 Map	Drum Pad 1		Selected Drum Toggle Step 1
 Map	Drum Pad 2		Selected Drum Toggle Step 2
 Map	Drum Pad 3		Selected Drum Toggle Step 3
@@ -231,6 +234,8 @@ Map	Device Knob 6		Compression Amount
 
 Scope	Novation	vst.NvB2.BassStation
 //	Control Surface Item	Key	Remotable Item	Scale	Mode	Groups
+Map	Shift Cliplaunch 1		Select Previous Program
+Map	Shift Cliplaunch 2		Select Next Program
 Map	Device Knob 1		Filter Frequency
 Map	Device Knob 2		Filter Resonance
 Map	Device Knob 3		Mod Env > Filter Freq
@@ -246,6 +251,8 @@ Map	Drum Pad 3		Osc2 Waveform
 
 Scope	Novation	vst.NvS0.VStation
 //	Control Surface Item	Key	Remotable Item	Scale	Mode	Groups
+Map	Shift Cliplaunch 1		Select Previous Program
+Map	Shift Cliplaunch 2		Select Next Program
 Map	Device Knob 1		Filter Frequency
 Map	Device Knob 2		Filter Resonance
 Map	Device Knob 3		Filter Overdrive
