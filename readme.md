@@ -5,7 +5,6 @@
 It's a codec/script for [Propellerhead Reason](https://www.reasonstudios.com/en/reason) to support [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini).
 The main idea is to make support of different layouts and share it with "MK3 + Reason" users.
 
-![Remote](https://www.propellerheads.se/substance/discovering-reason/img/part33/remote-logo180.png)
 If you are new, recommend you to read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
 
 
@@ -124,16 +123,15 @@ Pitch Bend
 Modulation
 Sustain
 ```
-Map currently in development.
-Soon i will publish a reference for all Reason devices.
-But for now you can use this script and make a map that you dream for.
+Basic mapping done. Check it in *Launchkey Mini MK3 Ext.remotemap*.
+Development continues.
+Of course you can use this script and make a map that you dream for.
 [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote)
 
 ## Install
 
 All you need is to copy files into Reason Remote codec's folder
 and setup Novation Launchkey Mini MK3 in Reason's preferences.
-![scripts](https://www.propellerheads.se/substance/discovering-reason/img/part33/remote-file-icons255.png)
 
 ### Mac
 
