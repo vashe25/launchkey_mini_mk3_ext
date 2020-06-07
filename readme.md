@@ -14,7 +14,7 @@ Hold Shift + Pad to switch layout.
 
 |Pads|||Knobs||||||
 |--|--|--|--|--|--|--|--|--|
-|Session|Drum|Custom|Volume|Device|Pan|Send A|Send B|Custom|
+|Session|Drum|Custom|Device|Volume|Pan|Send A|Send B|Custom|
 
 ## Controls list and Mapping
 
@@ -129,12 +129,14 @@ Of course you can use this script and make a map that you dream for.
 [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote)
 
 ### Basic mapping
-*Play* -> Play
-*Shift + Play* -> Stop
-*Record* -> Record On/Off
-*Shift + Record* -> Loop On/Off
-*Shift + Track Left/Right* -> Prev/Next track in sequencer
-*Shift + Cliplaunch Up/Down* -> Prev/Next device patch
+| Control | Function |
+|--|--|
+| *Play* | Play |
+| *Shift* + *Play* | Stop |
+| *Record* | Record On/Off |
+| *Shift* + *Record* | Loop On/Off |
+| *Shift* + *Track Left/Right* | Prev/Next track in sequencer |
+| *Shift* + *Cliplaunch 1/2* | Prev/Next device patch |
 
 In basic mapping i programm *Drum Pads* and *Device Knobs* layouts.
 
