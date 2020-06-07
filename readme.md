@@ -166,7 +166,7 @@ Just try Redrum programming patterns! 🎛
 - *Knob 2* selects pattern in bank.
 - *Knob 3* selects pattern bank.
 - *Pads* is a 16 steps.
-- *Cliplauch 1* is a play/stop.
+- *Cliplaunch 1* is a play/stop.
 
 Now you have drum machine!
 
