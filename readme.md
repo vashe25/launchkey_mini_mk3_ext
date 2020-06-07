@@ -162,11 +162,12 @@ Just try Redrum programming patterns! 🎛
 4. Push some pads to make a pattern.
 5. And hit *Cliplaunch 1* to play pattern.
 
-*Knob 1* selects sample slot.
-*Knob 2* selects pattern in bank.
-*Knob 3* selects pattern bank.
-*Pads* is a 16 steps.
-*Cliplauch 1* is a play/stop.
+- *Knob 1* selects sample slot.
+- *Knob 2* selects pattern in bank.
+- *Knob 3* selects pattern bank.
+- *Pads* is a 16 steps.
+- *Cliplauch 1* is a play/stop.
+
 Now you have drum machine!
 
 ## Install
