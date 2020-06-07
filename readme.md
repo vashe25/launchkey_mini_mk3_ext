@@ -3,7 +3,7 @@
 ![Launchkey Mini MK3](https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png)
 
 It's a codec/script for [Propellerhead Reason](https://www.reasonstudios.com/en/reason) to support [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini).
-The main idea is to make support of different layouts and share it with "MK3 + Reason" users.
+The main idea is to make support of *all layouts* and share it with "MK3 + Reason" users.
 
 If you are new, recommend you to read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
 
@@ -127,6 +127,45 @@ Basic mapping done. Check it in *Launchkey Mini MK3 Ext.remotemap*.
 Development continues.
 Of course you can use this script and make a map that you dream for.
 [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote)
+
+### Basic mapping
+*Play* -> Play
+*Shift + Play* -> Stop
+*Record* -> Record On/Off
+*Shift + Record* -> Loop On/Off
+*Shift + Track Left/Right* -> Prev/Next track in sequencer
+*Shift + Cliplaunch Up/Down* -> Prev/Next device patch
+
+In basic mapping i programm *Drum Pads* and *Device Knobs* layouts.
+
+*Session Pads* layout i'll plan to program some global features
+like shifting loop markers (15 & 16 pads).
+
+*Custom Pads* layout operates like notes.
+Use [Novation's Components](https://novationmusic.com/en/components) for mapping it.
+
+Other layouts is available for mapping in your projects:
+- *Volume Knobs*
+- *Pan Knobs*
+- *Send A Knobs*
+- *Send B Knobs*
+- *Custom Knobs*
+
+### Killer Feature! 😎
+Just try Redrum programming patterns! 🎛
+
+1. Switch knobs to *Device layout*.
+2. Switch pads to *Drum layout*.
+3. Select Redrum track in sequencer.
+4. Push some pads to make a pattern.
+5. And hit *Cliplaunch 1* to play pattern.
+
+*Knob 1* selects sample slot.
+*Knob 2* selects pattern in bank.
+*Knob 3* selects pattern bank.
+*Pads* is a 16 steps.
+*Cliplauch 1* is a play/stop.
+Now you have drum machine!
 
 ## Install
 
