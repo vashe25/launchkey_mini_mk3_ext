@@ -210,7 +210,7 @@ C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remo
 
 Windows 7 or later
 ```
-C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation
+C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
 ```
 and
 ```
@@ -226,7 +226,7 @@ C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remo
 
 Windows 7 or later
 ```
-C:\ProgramData\Propellerhead Software\Remote\Maps\Novation
+C:\ProgramData\Propellerhead Software\Remote\Maps\Novation\
 ```
 
 ### Setup in Reason
