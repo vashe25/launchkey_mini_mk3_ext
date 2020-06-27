@@ -162,9 +162,9 @@ Just try Redrum programming patterns! 🎛
 4. Push some pads to make a pattern.
 5. And hit *Cliplaunch 1* to play pattern.
 
-- *Knob 1* selects sample slot.
+- Select sample slot by *Knob 1* or by keyboard range from C0 to A0.
 - *Knob 2* selects pattern in bank.
-- *Knob 3* selects pattern bank.
+- *Knob 3* selects bank.
 - *Pads* is a 16 steps.
 - *Cliplaunch 1* is a play/stop.
 
@@ -195,7 +195,10 @@ to
 
 ### Windows
 
-Copy files:
+Run `install-winxp.bat` if you use *Windows XP*
+or `install-win7-or-later.bat` if you use *Windows 7 or later*.
+
+Ofcourse you can copy files by yourself:
 ```
 Launchkey Mini MK3 Ext.lua
 Launchkey Mini MK3 Ext.luacodec
@@ -203,12 +206,12 @@ Launchkey Mini MK3 Ext.png
 ```
 to the followinig location, note that Windows Version determines path.
 
-Windows XP
+*Windows XP*
 ```
 C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
 ```
 
-Windows 7 or later
+*Windows 7 or later*
 ```
 C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
 ```
@@ -219,12 +222,12 @@ Launchkey Mini MK3 Ext.remotemap
 
 to the followinig location, note that Windows Version determines path.
 
-Windows XP
+*Windows XP*
 ```
 C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Maps\Novation\
 ```
 
-Windows 7 or later
+*Windows 7 or later*
 ```
 C:\ProgramData\Propellerhead Software\Remote\Maps\Novation\
 ```
