@@ -201,14 +201,33 @@ Launchkey Mini MK3 Ext.lua
 Launchkey Mini MK3 Ext.luacodec
 Launchkey Mini MK3 Ext.png
 ```
-to
-`C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\`
+to the followinig location, note that Windows Version determines path.
+
+Windows XP
+```
+C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
+```
+
+Windows 7 or later
+```
+C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
+```
 and
 ```
 Launchkey Mini MK3 Ext.remotemap
 ```
-to
-`C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Maps\Novation\`
+
+to the followinig location, note that Windows Version determines path.
+
+Windows XP
+```
+C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Maps\Novation\
+```
+
+Windows 7 or later
+```
+C:\ProgramData\Propellerhead Software\Remote\Maps\Novation\
+```
 
 ### Setup in Reason
 
