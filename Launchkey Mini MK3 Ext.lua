@@ -276,7 +276,7 @@ g_knob_mode = 2 -- default is Device mode
 1 - Drum
 2 - Session
 ]]--
-g_pad_mode = 2 -- default id Session mode
+g_pad_mode = 1 -- default id Drum mode
 
 --[[
 Shift status 0 or 127
@@ -338,10 +338,10 @@ function remote_probe(manufacturer, model, prober)
 end
 
 function remote_prepare_for_use()
-	-- set device to 'DAW mode' and enter SESSION layout
+	-- set device to 'DAW mode' and enter DRUM layout
 	local retEvents = {
 		remote.make_midi("9F 0C 7F"),
-		remote.make_midi("BF 03 02"), -- PAD: SESSION LAYOUT
+		remote.make_midi("BF 03 01"), -- PAD: DRUM LAYOUT
 		remote.make_midi("BF 09 02"), -- KNOBS: DEVICE LAYOUT
 	}
 	return retEvents

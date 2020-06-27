@@ -29,6 +29,7 @@ Map	Play		Play
 Map	Record		Record
 Map	Session Pad 1		Target Track Mute
 Map	Session Pad 2		Target Track Solo
+Map	Session Pad 9		Auto-quantize
 Map	Session Pad 7		Goto Left Locator
 Map	Session Pad 8		Goto Right Locator
 Map	Session Pad 15		Move Loop Left
@@ -105,6 +106,16 @@ Map	Drum Pad 13		Selected Drum Toggle Step 13
 Map	Drum Pad 14		Selected Drum Toggle Step 14
 Map	Drum Pad 15		Selected Drum Toggle Step 15
 Map	Drum Pad 16		Selected Drum Toggle Step 16
+Map	Keyboard	C0	Select Drum 1
+Map	Keyboard	C#0	Select Drum 2
+Map	Keyboard	D0	Select Drum 3
+Map	Keyboard	D#0	Select Drum 4
+Map	Keyboard	E0	Select Drum 5
+Map	Keyboard	F0	Select Drum 6
+Map	Keyboard	F#0	Select Drum 7
+Map	Keyboard	G0	Select Drum 8
+Map	Keyboard	G#0	Select Drum 9
+Map	Keyboard	A0	Select Drum 10
 
 
 Scope	Propellerheads	SubTractor Analog Synthesizer
@@ -188,10 +199,23 @@ Map	Cliplaunch 1		Run
 
 
 Scope	Propellerhead Software	se.propellerheads.Europa
+Define Group	Keyboard Shortcut Variations	Eng1	Eng2	Eng3
 //	Control Surface Item	Key	Remotable Item	Scale	Mode	Groups
-Map	Device Knob 1		Osc1 Shape
-Map	Device Knob 2		Osc1 Mod1 Amt
-Map	Device Knob 3		Osc1 Mod2 Amt
+Map	Drum Pad 1		Keyboard Shortcut Variations=Eng1
+Map	Drum Pad 2		Keyboard Shortcut Variations=Eng2
+Map	Drum Pad 3		Keyboard Shortcut Variations=Eng3
+Map	Drum Pad 9		Osc1 On
+Map	Drum Pad 10		Osc2 On
+Map	Drum Pad 11		Osc3 On
+Map	Device Knob 1		Osc1 Shape			Eng1
+Map	Device Knob 2		Osc1 Mod1 Amt			Eng1
+Map	Device Knob 3		Osc1 Mod2 Amt			Eng1
+Map	Device Knob 1		Osc2 Shape			Eng2
+Map	Device Knob 2		Osc2 Mod1 Amt			Eng2
+Map	Device Knob 3		Osc2 Mod2 Amt			Eng2
+Map	Device Knob 1		Osc3 Shape			Eng3
+Map	Device Knob 2		Osc3 Mod1 Amt			Eng3
+Map	Device Knob 3		Osc3 Mod2 Amt			Eng3
 Map	Device Knob 4		Filter Freq
 Map	Device Knob 5		Filter Reso
 Map	Device Knob 6		Filter Drive
