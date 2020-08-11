@@ -283,6 +283,56 @@ Shift status 0 or 127
 ]]--
 g_shift_status = false
 
+--[[
+Pot/pickup
+current values to compare with sended from control surface
+]]--
+g_knobs = {
+	0, 0, 0, 0, 0, 0, 0, 0,
+}
+
+--[[
+new_value - value sended from control surface
+curr_value - value stored by remote into g_knobs
+]]
+function mute(new_value, curr_value)
+	-- difference between values
+	if new_value == curr_value or math.abs(new_value - curr_value) < 10 then
+		return true
+	else
+		return false
+	end
+end
+
+--[[
+remote_set_state() is called regularly to update the state of control surface items.
+changed_items is a table containing indexes to the items that have changed since the last call.
+A common use for this function is useful to create a new “machine state”, mirroring the state of the whole control surface, at that point in time.
+The new machine is later used to compare with a delivered machine state when remote_deliver_midi() is called.
+]]
+function remote_set_state(changed_items)
+	-- update knobs state, set current values
+	for i, item_index in ipairs(changed_items) do
+		if item_index < 49 then
+			local ki = item_index - g_knob_mode * 8
+			g_knobs[ki] = remote.get_item_value(item_index)
+		end
+	end
+end
+
+--[[ listener
+This function is called by Remote after an auto-input item message has been handled.
+The typical use is to store the current time and item index, for timed feedback texts.
+item_index is the index to the item.
+]]--
+function remote_on_auto_input(item_index)
+	-- update knobs last value
+	if item_index < 49 then
+	local ki = item_index - g_knob_mode * 8
+		g_knobs[ki] = remote.get_item_value(item_index)
+	end
+end
+
 function remote_probe(manufacturer, model, prober)
 	-- auto detect the surface
 
@@ -381,11 +431,14 @@ function remote_process_midi(event)
 
 		-- knob handler | BF 15 - BF 1C | knobe_mode 1 <> 5
 		elseif event[2] >= 21 and event[2] <= 28 and not g_shift_status then
-			-- knob_index 9 <> 40
-			local knob_index = g_knob_mode * 8 + event[2] - 20
-			remote.handle_input({time_stamp=event.time_stamp, item=knob_index, value=event[3]})
+			local ki = event[2] - 20
+			if mute(event[3], g_knobs[ki]) then
+				g_knobs[ki] = event[3]
+				-- knob_index 9 <> 40
+				local knob_index = g_knob_mode * 8 + event[2] - 20
+				remote.handle_input({time_stamp=event.time_stamp, item=knob_index, value=event[3]})
+			end
 			return true
-
 		-- Shifted Play & Record
 		elseif (event[2] == 115 or event[2] == 117) and g_shift_status then
 			local button_index = 89
@@ -398,8 +451,16 @@ function remote_process_midi(event)
 
 	-- B0 events:
 	elseif event[1] == 176 then
+		if event[2] >= 21 and event[2] <= 28 and not g_shift_status then
+			-- knob_index 1 <> 8
+			local ki = event[2] - 20
+			if mute(event[3], g_knobs[ki]) then
+				g_knobs[ki] = event[3]
+				remote.handle_input({time_stamp=event.time_stamp, item=ki, value=event[3]})
+			end
+			return true
 		-- set shift status
-		if event[2] == 108 then
+		elseif event[2] == 108 then
 			if event[3] == 0 then
 				g_shift_status = false
 			else
