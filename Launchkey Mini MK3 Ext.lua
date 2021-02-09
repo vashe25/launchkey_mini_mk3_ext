@@ -415,8 +415,23 @@ If the event was translated and handled this function should return true, to ind
 If the function returns false, Remote will try to find a match using the automatic input registry defined with remote.define_auto_inputs().
 ]]--
 function remote_process_midi(event)
+	-- Note On/Off [144 - 159] - [128-143]
+	-- Chords on channel 2
+	if event[1] == 129 then
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=5 + event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=7 + event[2], velocity=event[3]})
+		return true
+	elseif	event[1] == 145 then
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=5 + event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=5 + event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=7 + event[2], velocity=event[3]})
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=7 + event[2], velocity=event[3]})
+		return true
 	-- BF events:
-	if event[1] == 191 then
+	elseif event[1] == 191 then
 		-- set pad mode
 		if event[2] == 3 then
 			g_pad_mode = event[3]
@@ -475,6 +490,5 @@ function remote_process_midi(event)
 			return true
 		end
 	end
-
 	return false
 end
