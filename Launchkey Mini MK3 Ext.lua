@@ -183,22 +183,22 @@ function remote_init(manufacturer, model)
 		{pattern="90 76 xx", name="Session Pad 15", port=1},
 		{pattern="90 77 xx", name="Session Pad 16", port=1},
 
-		{pattern="99 28 xx", name="Drum Pad 1", port=1},
-		{pattern="99 29 xx", name="Drum Pad 2", port=1},
-		{pattern="99 2A xx", name="Drum Pad 3", port=1},
-		{pattern="99 2B xx", name="Drum Pad 4", port=1},
-		{pattern="99 30 xx", name="Drum Pad 5", port=1},
-		{pattern="99 31 xx", name="Drum Pad 6", port=1},
-		{pattern="99 32 xx", name="Drum Pad 7", port=1},
-		{pattern="99 33 xx", name="Drum Pad 8", port=1},
-		{pattern="99 24 xx", name="Drum Pad 9", port=1},
-		{pattern="99 25 xx", name="Drum Pad 10", port=1},
-		{pattern="99 26 xx", name="Drum Pad 11", port=1},
-		{pattern="99 27 xx", name="Drum Pad 12", port=1},
-		{pattern="99 2C xx", name="Drum Pad 13", port=1},
-		{pattern="99 2D xx", name="Drum Pad 14", port=1},
-		{pattern="99 2E xx", name="Drum Pad 15", port=1},
-		{pattern="99 2F xx", name="Drum Pad 16", port=1},
+		{pattern="99 28 ?<???x>", name="Drum Pad 1", port=1},
+		{pattern="99 29 ?<???x>", name="Drum Pad 2", port=1},
+		{pattern="99 2A ?<???x>", name="Drum Pad 3", port=1},
+		{pattern="99 2B ?<???x>", name="Drum Pad 4", port=1},
+		{pattern="99 30 ?<???x>", name="Drum Pad 5", port=1},
+		{pattern="99 31 ?<???x>", name="Drum Pad 6", port=1},
+		{pattern="99 32 ?<???x>", name="Drum Pad 7", port=1},
+		{pattern="99 33 ?<???x>", name="Drum Pad 8", port=1},
+		{pattern="99 24 ?<???x>", name="Drum Pad 9", port=1},
+		{pattern="99 25 ?<???x>", name="Drum Pad 10", port=1},
+		{pattern="99 26 ?<???x>", name="Drum Pad 11", port=1},
+		{pattern="99 27 ?<???x>", name="Drum Pad 12", port=1},
+		{pattern="99 2C ?<???x>", name="Drum Pad 13", port=1},
+		{pattern="99 2D ?<???x>", name="Drum Pad 14", port=1},
+		{pattern="99 2E ?<???x>", name="Drum Pad 15", port=1},
+		{pattern="99 2F ?<???x>", name="Drum Pad 16", port=1},
 
 		{pattern="BF 66 ?<???x>", name="Track Down", port=1},
 		{pattern="BF 67 ?<???x>", name="Track Up", port=1},
@@ -292,6 +292,30 @@ g_knobs = {
 }
 
 --[[
+Drum Pads
+key - midi cc
+value - index in items
+]]--
+g_drumpads = {}
+g_drumpads[36] = 73
+g_drumpads[37] = 74
+g_drumpads[38] = 75
+g_drumpads[39] = 76
+g_drumpads[40] = 65
+g_drumpads[41] = 66
+g_drumpads[42] = 67
+g_drumpads[43] = 68
+g_drumpads[44] = 77
+g_drumpads[45] = 78
+g_drumpads[46] = 79
+g_drumpads[47] = 80
+g_drumpads[48] = 69
+g_drumpads[49] = 70
+g_drumpads[50] = 71
+g_drumpads[51] = 72
+
+
+--[[
 new_value - value sended from control surface
 curr_value - value stored by remote into g_knobs
 ]]
@@ -325,13 +349,13 @@ This function is called by Remote after an auto-input item message has been hand
 The typical use is to store the current time and item index, for timed feedback texts.
 item_index is the index to the item.
 ]]--
-function remote_on_auto_input(item_index)
+--[[function remote_on_auto_input(item_index)
 	-- update knobs last value
 	if item_index < 49 then
 	local ki = item_index - g_knob_mode * 8
 		g_knobs[ki] = remote.get_item_value(item_index)
 	end
-end
+end]]--
 
 function remote_probe(manufacturer, model, prober)
 	-- auto detect the surface
@@ -429,6 +453,11 @@ function remote_process_midi(event)
 		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=5 + event[2], velocity=event[3]})
 		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=7 + event[2], velocity=event[3]})
 		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=7 + event[2], velocity=event[3]})
+		return true
+	-- Drum Pads converts to triggers/buttons
+	elseif event[1] == 153 and event.port == 1 then
+		local i = g_drumpads[event[2]]
+		remote.handle_input({time_stamp=event.time_stamp, item=i, value=1})
 		return true
 	-- BF events:
 	elseif event[1] == 191 then

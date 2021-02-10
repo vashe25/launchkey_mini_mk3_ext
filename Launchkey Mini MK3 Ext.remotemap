@@ -223,27 +223,45 @@ Map	Cliplaunch 1		Record Sample
 
 
 Scope	Propellerheads	Thor Polysonic Synthesizer
+Define Group	Keyboard Shortcut Variations	Note1-8	Note9-16
 //	Control Surface Item	Key	Remotable Item	Scale	Mode	Groups
-Map	Device Knob 1		Rotary 1
-Map	Device Knob 2		Rotary 2
-Map	Drum Pad 1		Pattern Step Gate 1
-Map	Drum Pad 2		Pattern Step Gate 2
-Map	Drum Pad 3		Pattern Step Gate 3
-Map	Drum Pad 4		Pattern Step Gate 4
-Map	Drum Pad 5		Pattern Step Gate 5
-Map	Drum Pad 6		Pattern Step Gate 6
-Map	Drum Pad 7		Pattern Step Gate 7
-Map	Drum Pad 8		Pattern Step Gate 8
-Map	Drum Pad 9		Pattern Step Gate 9
-Map	Drum Pad 10		Pattern Step Gate 10
-Map	Drum Pad 11		Pattern Step Gate 11
-Map	Drum Pad 12		Pattern Step Gate 12
-Map	Drum Pad 13		Pattern Step Gate 13
-Map	Drum Pad 14		Pattern Step Gate 14
-Map	Drum Pad 15		Pattern Step Gate 15
-Map	Drum Pad 16		Pattern Step Gate 16
-Map	Cliplaunch 1		Button 1
+Map	Drum Pad 9		Keyboard Shortcut Variations=Note1-8
+Map	Drum Pad 10		Keyboard Shortcut Variations=Note9-16
+Map	Drum Pad 1		Pattern Step Gate 1			Note1-8
+Map	Drum Pad 2		Pattern Step Gate 2			Note1-8
+Map	Drum Pad 3		Pattern Step Gate 3			Note1-8
+Map	Drum Pad 4		Pattern Step Gate 4			Note1-8
+Map	Drum Pad 5		Pattern Step Gate 5			Note1-8
+Map	Drum Pad 6		Pattern Step Gate 6			Note1-8
+Map	Drum Pad 7		Pattern Step Gate 7			Note1-8
+Map	Drum Pad 8		Pattern Step Gate 8			Note1-8
+Map	Drum Pad 1		Pattern Step Gate 9			Note9-16
+Map	Drum Pad 2		Pattern Step Gate 10			Note9-16
+Map	Drum Pad 3		Pattern Step Gate 11			Note9-16
+Map	Drum Pad 4		Pattern Step Gate 12			Note9-16
+Map	Drum Pad 5		Pattern Step Gate 13			Note9-16
+Map	Drum Pad 6		Pattern Step Gate 14			Note9-16
+Map	Drum Pad 7		Pattern Step Gate 15			Note9-16
+Map	Drum Pad 8		Pattern Step Gate 16			Note9-16
+Map	Device Knob 1		Pattern Step Knob 1			Note1-8
+Map	Device Knob 2		Pattern Step Knob 2			Note1-8
+Map	Device Knob 3		Pattern Step Knob 3			Note1-8
+Map	Device Knob 4		Pattern Step Knob 4			Note1-8
+Map	Device Knob 5		Pattern Step Knob 5			Note1-8
+Map	Device Knob 6		Pattern Step Knob 6			Note1-8
+Map	Device Knob 7		Pattern Step Knob 7			Note1-8
+Map	Device Knob 8		Pattern Step Knob 8			Note1-8
+Map	Device Knob 1		Pattern Step Knob 9			Note9-16
+Map	Device Knob 2		Pattern Step Knob 10			Note9-16
+Map	Device Knob 3		Pattern Step Knob 11			Note9-16
+Map	Device Knob 4		Pattern Step Knob 12			Note9-16
+Map	Device Knob 5		Pattern Step Knob 13			Note9-16
+Map	Device Knob 6		Pattern Step Knob 14			Note9-16
+Map	Device Knob 7		Pattern Step Knob 15			Note9-16
+Map	Device Knob 8		Pattern Step Knob 16			Note9-16
+Map	Cliplaunch 1		Step Sequencer Run
 Map	Cliplaunch 2		Button 2
+
 
 
 Scope	Propellerhead Software	se.propellerheads.radicalpiano
