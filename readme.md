@@ -153,8 +153,10 @@ Other layouts is available for mapping in your projects:
 - *Send B Knobs*
 - *Custom Knobs*
 
-### Killer Feature! 😎
-Just try Redrum programming patterns! 🎛
+## Features
+
+### Redrum programming patterns 😎
+Pads are steps in Redrum sequencer.
 
 1. Switch knobs to *Device layout*.
 2. Switch pads to *Drum layout*.
@@ -169,6 +171,22 @@ Just try Redrum programming patterns! 🎛
 - *Cliplaunch 1* is a play/stop.
 
 Now you have drum machine!
+
+### Custom Pads Scales
+This feature provide programming scales for Custom Pads mode on the fly.
+Shift + Keyboard on channel 2 used to set note for pad.
+Each pad can remembers only one note.
+Chord mode i'll release in the future - where one pad can trigger two, three or more notes.
+
+1. Select Custom Pads mode, hold [Shift] + [Custom Pad]
+2. Switch Keyboard into the second channel, hold [Shift + Transpose] + [Drum Pad]
+Now, you are ready to program scales.
+3. Trigger any pad, it remembers last one.
+4. Hold [Shift] + any key on Keyboard you want
+5. Do steps 3 - 4 with all pads, then switch Keyboard to
+channel 1, hold [Shift + Transpose] + [Session Pad].
+
+Done!
 
 ## Install
 

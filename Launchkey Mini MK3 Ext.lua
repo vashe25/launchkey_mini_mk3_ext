@@ -166,22 +166,22 @@ function remote_init(manufacturer, model)
 		{pattern="BF 1B xx", name="Send B Knob 7", port=1},
 		{pattern="BF 1C xx", name="Send B Knob 8", port=1},
 
-		{pattern="90 60 xx", name="Session Pad 1", port=1},
-		{pattern="90 61 xx", name="Session Pad 2", port=1},
-		{pattern="90 62 xx", name="Session Pad 3", port=1},
-		{pattern="90 63 xx", name="Session Pad 4", port=1},
-		{pattern="90 64 xx", name="Session Pad 5", port=1},
-		{pattern="90 65 xx", name="Session Pad 6", port=1},
-		{pattern="90 66 xx", name="Session Pad 7", port=1},
-		{pattern="90 67 xx", name="Session Pad 8", port=1},
-		{pattern="90 70 xx", name="Session Pad 9", port=1},
-		{pattern="90 71 xx", name="Session Pad 10", port=1},
-		{pattern="90 72 xx", name="Session Pad 11", port=1},
-		{pattern="90 73 xx", name="Session Pad 12", port=1},
-		{pattern="90 74 xx", name="Session Pad 13", port=1},
-		{pattern="90 75 xx", name="Session Pad 14", port=1},
-		{pattern="90 76 xx", name="Session Pad 15", port=1},
-		{pattern="90 77 xx", name="Session Pad 16", port=1},
+		{pattern="90 60 ?<???x>", name="Session Pad 1", port=1},
+		{pattern="90 61 ?<???x>", name="Session Pad 2", port=1},
+		{pattern="90 62 ?<???x>", name="Session Pad 3", port=1},
+		{pattern="90 63 ?<???x>", name="Session Pad 4", port=1},
+		{pattern="90 64 ?<???x>", name="Session Pad 5", port=1},
+		{pattern="90 65 ?<???x>", name="Session Pad 6", port=1},
+		{pattern="90 66 ?<???x>", name="Session Pad 7", port=1},
+		{pattern="90 67 ?<???x>", name="Session Pad 8", port=1},
+		{pattern="90 70 ?<???x>", name="Session Pad 9", port=1},
+		{pattern="90 71 ?<???x>", name="Session Pad 10", port=1},
+		{pattern="90 72 ?<???x>", name="Session Pad 11", port=1},
+		{pattern="90 73 ?<???x>", name="Session Pad 12", port=1},
+		{pattern="90 74 ?<???x>", name="Session Pad 13", port=1},
+		{pattern="90 75 ?<???x>", name="Session Pad 14", port=1},
+		{pattern="90 76 ?<???x>", name="Session Pad 15", port=1},
+		{pattern="90 77 ?<???x>", name="Session Pad 16", port=1},
 
 		{pattern="99 28 ?<???x>", name="Drum Pad 1", port=1},
 		{pattern="99 29 ?<???x>", name="Drum Pad 2", port=1},
@@ -217,45 +217,45 @@ function remote_init(manufacturer, model)
 	remote.define_auto_inputs(inputs)
 
 	local outputs = {
-		{name="Session Pad 1", pattern="90 60 0<00xx>", x="value*3"},
-		{name="Session Pad 2", pattern="90 61 0<00xx>", x="value*3"},
-		{name="Session Pad 3", pattern="90 62 0<00xx>", x="value*3"},
-		{name="Session Pad 4", pattern="90 63 0<00xx>", x="value*3"},
-		{name="Session Pad 5", pattern="90 64 0<00xx>", x="value*3"},
-		{name="Session Pad 6", pattern="90 65 0<00xx>", x="value*3"},
-		{name="Session Pad 7", pattern="90 66 0<00xx>", x="value*3"},
-		{name="Session Pad 8", pattern="90 67 0<00xx>", x="value*3"},
-		{name="Session Pad 9", pattern="90 70 0<00xx>", x="value*3"},
-		{name="Session Pad 10", pattern="90 71 0<00xx>", x="value*3"},
-		{name="Session Pad 11", pattern="90 72 0<00xx>", x="value*3"},
-		{name="Session Pad 12", pattern="90 73 0<00xx>", x="value*3"},
-		{name="Session Pad 13", pattern="90 74 0<00xx>", x="value*3"},
-		{name="Session Pad 14", pattern="90 75 0<00xx>", x="value*3"},
-		{name="Session Pad 15", pattern="90 76 0<00xx>", x="value*3"},
-		{name="Session Pad 16", pattern="90 77 0<00xx>", x="value*3"},
+		{name="Session Pad 1", pattern="90 60 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 2", pattern="90 61 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 3", pattern="90 62 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 4", pattern="90 63 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 5", pattern="90 64 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 6", pattern="90 65 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 7", pattern="90 66 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 8", pattern="90 67 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 9", pattern="90 70 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 10", pattern="90 71 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 11", pattern="90 72 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 12", pattern="90 73 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 13", pattern="90 74 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 14", pattern="90 75 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 15", pattern="90 76 0<00xx>", x="value*3", port=1},
+		{name="Session Pad 16", pattern="90 77 0<00xx>", x="value*3", port=1},
 
-		{name="Drum Pad 1", pattern="99 28 0<00xx>", x="value*3"},
-		{name="Drum Pad 2", pattern="99 29 0<00xx>", x="value*3"},
-		{name="Drum Pad 3", pattern="99 2A 0<00xx>", x="value*3"},
-		{name="Drum Pad 4", pattern="99 2B 0<00xx>", x="value*3"},
-		{name="Drum Pad 5", pattern="99 30 0<00xx>", x="value*3"},
-		{name="Drum Pad 6", pattern="99 31 0<00xx>", x="value*3"},
-		{name="Drum Pad 7", pattern="99 32 0<00xx>", x="value*3"},
-		{name="Drum Pad 8", pattern="99 33 0<00xx>", x="value*3"},
-		{name="Drum Pad 9", pattern="99 24 0<00xx>", x="value*3"},
-		{name="Drum Pad 10", pattern="99 25 0<00xx>", x="value*3"},
-		{name="Drum Pad 11", pattern="99 26 0<00xx>", x="value*3"},
-		{name="Drum Pad 12", pattern="99 27 0<00xx>", x="value*3"},
-		{name="Drum Pad 13", pattern="99 2C 0<00xx>", x="value*3"},
-		{name="Drum Pad 14", pattern="99 2D 0<00xx>", x="value*3"},
-		{name="Drum Pad 15", pattern="99 2E 0<00xx>", x="value*3"},
-		{name="Drum Pad 16", pattern="99 2F 0<00xx>", x="value*3"},
+		{name="Drum Pad 1", pattern="99 28 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 2", pattern="99 29 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 3", pattern="99 2A 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 4", pattern="99 2B 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 5", pattern="99 30 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 6", pattern="99 31 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 7", pattern="99 32 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 8", pattern="99 33 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 9", pattern="99 24 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 10", pattern="99 25 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 11", pattern="99 26 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 12", pattern="99 27 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 13", pattern="99 2C 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 14", pattern="99 2D 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 15", pattern="99 2E 0<00xx>", x="value*3", port=1},
+		{name="Drum Pad 16", pattern="99 2F 0<00xx>", x="value*3", port=1},
 
-		{name="Cliplaunch 1", pattern="B0 68 xx", x="value*125+2"},
-		{name="Cliplaunch 2", pattern="B0 69 xx", x="value*125+2"},
+		{name="Cliplaunch 1", pattern="B0 68 xx", x="value*127", port=1},
+		{name="Cliplaunch 2", pattern="B0 69 xx", x="value*127", port=1},
 
-		{name="Play", pattern="BF 73 xx", x="value*125+2"},
-		{name="Record", pattern="BF 75 xx", x="value*125+2"},
+		{name="Play", pattern="BF 73 xx", x="value*127", port=1},
+		{name="Record", pattern="BF 75 xx", x="value*127", port=1},
 	}
 	remote.define_auto_outputs(outputs)
 
@@ -292,29 +292,67 @@ g_knobs = {
 }
 
 --[[
-Drum Pads
+Pads
 key - midi cc
-value - index in items
+value - item index
 ]]--
-g_drumpads = {}
-g_drumpads[36] = 73
-g_drumpads[37] = 74
-g_drumpads[38] = 75
-g_drumpads[39] = 76
-g_drumpads[40] = 65
-g_drumpads[41] = 66
-g_drumpads[42] = 67
-g_drumpads[43] = 68
-g_drumpads[44] = 77
-g_drumpads[45] = 78
-g_drumpads[46] = 79
-g_drumpads[47] = 80
-g_drumpads[48] = 69
-g_drumpads[49] = 70
-g_drumpads[50] = 71
-g_drumpads[51] = 72
+g_pads = {
+	-- drum pads
+	[36] = 73,
+	[37] = 74,
+	[38] = 75,
+	[39] = 76,
+	[40] = 65,
+	[41] = 66,
+	[42] = 67,
+	[43] = 68,
+	[44] = 77,
+	[45] = 78,
+	[46] = 79,
+	[47] = 80,
+	[48] = 69,
+	[49] = 70,
+	[50] = 71,
+	[51] = 72,
+	-- session pads
+	[96] = 49,
+	[97] = 50,
+	[98] = 51,
+	[99] = 52,
+	[100] = 53,
+	[101] = 54,
+	[102] = 55,
+	[103] = 56,
+	[112] = 57,
+	[113] = 58,
+	[114] = 59,
+	[115] = 60,
+	[116] = 61,
+	[117] = 62,
+	[118] = 63,
+	[119] = 64
+}
 
-
+g_cpads_pressed = false
+g_cpads_last_note = 36
+g_cpads_note = {
+	[36] = 48, -- C1
+	[37] = 49,
+	[38] = 50,
+	[39] = 51,
+	[40] = 56, -- G#1
+	[41] = 57,
+	[42] = 58,
+	[43] = 59,
+	[44] = 52, -- E1
+	[45] = 53,
+	[46] = 54,
+	[47] = 55,
+	[48] = 60, -- C2
+	[49] = 61,
+	[50] = 62,
+	[51] = 63,
+}
 --[[
 new_value - value sended from control surface
 curr_value - value stored by remote into g_knobs
@@ -439,26 +477,61 @@ If the event was translated and handled this function should return true, to ind
 If the function returns false, Remote will try to find a match using the automatic input registry defined with remote.define_auto_inputs().
 ]]--
 function remote_process_midi(event)
-	-- Note On/Off [144 - 159] - [128-143]
-	-- Chords on channel 2
-	if event[1] == 129 then
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=5 + event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=7 + event[2], velocity=event[3]})
+	-- Custom Pads Note On / channel 10 keyboard
+	if event[1] == 153 and event.port == 2 then
+		g_cpads_last_note = event[2]
+		local note = g_cpads_note[event[2]]
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=note, velocity=event[3]})
 		return true
-	elseif	event[1] == 145 then
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=5 + event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=5 + event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=7 + event[2], velocity=event[3]})
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=7 + event[2], velocity=event[3]})
+	-- Custom Pads Note Off / channel 10 keyboard
+	elseif event[1] == 137 and event.port == 2 then
+		local note = g_cpads_note[event[2]]
+		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=note, velocity=event[3]})
+		return true
+	-- Note On/Off [144 - 159] - [128-143]
+	-- Chords on channel 2 programming Custom Pads
+	elseif event[1] == 129 and event.port == 2 and g_shift_status then
+		-- do nothing
+		return true
+	elseif event[1] == 145 and event.port == 2 and g_shift_status then
+		g_cpads_note[g_cpads_last_note] = event[2]
+		return true
+	-- Session Pads converts to triggers/buttons
+	elseif event[1] == 144 and event.port == 1 then
+		local index = g_pads[event[2]]
+		remote.handle_input({time_stamp=event.time_stamp, item=index, value=1})
 		return true
 	-- Drum Pads converts to triggers/buttons
 	elseif event[1] == 153 and event.port == 1 then
-		local i = g_drumpads[event[2]]
-		remote.handle_input({time_stamp=event.time_stamp, item=i, value=1})
+		local index = g_pads[event[2]]
+		remote.handle_input({time_stamp=event.time_stamp, item=index, value=1})
 		return true
+		-- B0 events:
+	elseif event[1] == 176 then
+		if event[2] >= 21 and event[2] <= 28 and not g_shift_status then
+			-- knob_index 1 <> 8
+			local knob_index = event[2] - 20
+			if mute(event[3], g_knobs[knob_index]) then
+				g_knobs[knob_index] = event[3]
+				remote.handle_input({time_stamp=event.time_stamp, item=knob_index, value=event[3]})
+			end
+			return true
+		-- set shift status
+		elseif event[2] == 108 then
+			if event[3] == 0 then
+				g_shift_status = false
+			else
+				g_shift_status = true
+			end
+			return true
+
+		-- Shifted Cliplaunch 1/2
+		elseif (event[2] == 104 or event[2] == 105) and g_shift_status then
+			local button_index = event[2] - 19
+			remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
+			return true
+		end
+
 	-- BF events:
 	elseif event[1] == 191 then
 		-- set pad mode
@@ -475,9 +548,9 @@ function remote_process_midi(event)
 
 		-- knob handler | BF 15 - BF 1C | knobe_mode 1 <> 5
 		elseif event[2] >= 21 and event[2] <= 28 and not g_shift_status then
-			local ki = event[2] - 20
-			if mute(event[3], g_knobs[ki]) then
-				g_knobs[ki] = event[3]
+			local knob_index = event[2] - 20
+			if mute(event[3], g_knobs[knob_index]) then
+				g_knobs[knob_index] = event[3]
 				-- knob_index 9 <> 40
 				local knob_index = g_knob_mode * 8 + event[2] - 20
 				remote.handle_input({time_stamp=event.time_stamp, item=knob_index, value=event[3]})
@@ -489,32 +562,6 @@ function remote_process_midi(event)
 			if event[2] == 117 then
 				button_index = 90
 			end
-			remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
-			return true
-		end
-
-	-- B0 events:
-	elseif event[1] == 176 then
-		if event[2] >= 21 and event[2] <= 28 and not g_shift_status then
-			-- knob_index 1 <> 8
-			local ki = event[2] - 20
-			if mute(event[3], g_knobs[ki]) then
-				g_knobs[ki] = event[3]
-				remote.handle_input({time_stamp=event.time_stamp, item=ki, value=event[3]})
-			end
-			return true
-		-- set shift status
-		elseif event[2] == 108 then
-			if event[3] == 0 then
-				g_shift_status = false
-			else
-				g_shift_status = true
-			end
-			return true
-
-		-- Shifted Cliplaunch 1/2
-		elseif (event[2] == 104 or event[2] == 105) and g_shift_status then
-			local button_index = event[2] - 19
 			remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
 			return true
 		end
