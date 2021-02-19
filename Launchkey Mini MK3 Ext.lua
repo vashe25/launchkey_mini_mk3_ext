@@ -333,7 +333,11 @@ g_pads = {
 	[119] = 64
 }
 
-g_cpads_pressed = false
+--[[
+Custom Pads layout Scales
+key - pad note
+value - new programmed note
+]]
 g_cpads_last_note = 36
 g_cpads_note = {
 	[36] = 48, -- C1
@@ -524,14 +528,12 @@ function remote_process_midi(event)
 				g_shift_status = true
 			end
 			return true
-
 		-- Shifted Cliplaunch 1/2
 		elseif (event[2] == 104 or event[2] == 105) and g_shift_status then
 			local button_index = event[2] - 19
 			remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
 			return true
 		end
-
 	-- BF events:
 	elseif event[1] == 191 then
 		-- set pad mode
@@ -539,13 +541,11 @@ function remote_process_midi(event)
 			g_pad_mode = event[3]
 			-- use this event but not handle
 			return true
-
 		-- set knob mode
 		elseif event[2] == 9 then
 			g_knob_mode = event[3]
 			-- use this event but not handle
 			return true
-
 		-- knob handler | BF 15 - BF 1C | knobe_mode 1 <> 5
 		elseif event[2] >= 21 and event[2] <= 28 and not g_shift_status then
 			local knob_index = event[2] - 20
