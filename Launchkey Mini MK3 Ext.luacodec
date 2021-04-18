@@ -7,8 +7,13 @@ function remote_supported_control_surfaces()
             model="Launchkey Mini MK3 Ext",
             source="Launchkey Mini MK3 Ext.lua",
             picture="Launchkey Mini MK3 Ext.png",
-            in_ports={ {description="Launchkey Mini MK3 DAW Port"}, {description="Launchkey Mini MK3 MIDI Port"} },
-            out_ports={ {description="Launchkey Mini MK3 DAW Port"} },
+            in_ports={
+                {description="Launchkey Mini MK3 DAW Port"},
+                {description="Launchkey Mini MK3 MIDI Port"}
+            },
+            out_ports={
+                {description="Launchkey Mini MK3 DAW Port"},
+            },
             has_keyboard=true,
         }
     }

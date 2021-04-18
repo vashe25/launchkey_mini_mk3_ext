@@ -334,28 +334,32 @@ g_pads = {
 }
 
 --[[
-Custom Pads layout Scales
-key - pad note
-value - new programmed note
+Custom Pads layout Scales'n'Chords
+g_cpad_status - notes pushed or not
+g_current_chord - array of notes playing
+on keyboard channel 2
+g_cpads_note - array of custom pads and
+and playing notes
 ]]
-g_cpads_last_note = 36
+g_cpad_status = false
+g_current_chord = {}
 g_cpads_note = {
-	[36] = 48, -- C1
-	[37] = 49,
-	[38] = 50,
-	[39] = 51,
-	[40] = 56, -- G#1
-	[41] = 57,
-	[42] = 58,
-	[43] = 59,
-	[44] = 52, -- E1
-	[45] = 53,
-	[46] = 54,
-	[47] = 55,
-	[48] = 60, -- C2
-	[49] = 61,
-	[50] = 62,
-	[51] = 63,
+	[36] = {[48] = 48}, -- C1
+	[37] = {[49] = 49},
+	[38] = {[50] = 50},
+	[39] = {[51] = 51},
+	[40] = {[56] = 56}, -- G#1
+	[41] = {[57] = 57},
+	[42] = {[58] = 58},
+	[43] = {[59] = 59},
+	[44] = {[52] = 52}, -- E1
+	[45] = {[53] = 53},
+	[46] = {[54] = 54},
+	[47] = {[55] = 55},
+	[48] = {[60] = 60}, -- C2
+	[49] = {[61] = 61},
+	[50] = {[62] = 62},
+	[51] = {[63] = 63},
 }
 --[[
 new_value - value sended from control surface
@@ -407,14 +411,12 @@ function remote_probe(manufacturer, model, prober)
 	local ins = {}
 	local received_ports = {}
 	local dev_found = 0
-	local request_events={}
-	local response = {}
-	request_events = { remote.make_midi("F0 7E 7F 06 01 F7") }
-	response = "F0 7E 00 06 02 00 20 29 02 01 00 00 ?? ?? ?? ?? F7"
+	local request_events = { remote.make_midi("F0 7E 7F 06 01 F7") }
+	local response = "F0 7E 00 06 02 00 20 29 02 01 00 00 ?? ?? ?? ?? F7"
 
-	local function match_events(mask,events)
-		for i,event in ipairs(events) do
-			local res = remote.match_midi(mask,event)
+	local function match_events(mask, events)
+		for i, event in ipairs(events) do
+			local res = remote.match_midi(mask, event)
 			if res ~= nil then
 				return true
 			end
@@ -425,13 +427,13 @@ function remote_probe(manufacturer, model, prober)
 	-- check all the MIDI OUT ports
 	for outPortIndex = 1, prober.out_ports do
 		-- send device inquiry msg
-		prober.midi_send_function(outPortIndex,request_events)
+		prober.midi_send_function(outPortIndex, request_events)
 		prober.wait_function(50)
 
 		-- check all the MIDI IN ports
-		for inPortIndex = 1,prober.in_ports do
+		for inPortIndex = 1, prober.in_ports do
 			local events = prober.midi_receive_function(inPortIndex)
-			if match_events(response,events) then
+			if match_events(response, events) then
 				port_out = outPortIndex + 1         -- DAW port
 				table.insert(ins, inPortIndex + 1)  -- DAW port
 				table.insert(ins, inPortIndex)    -- MIDI port
@@ -481,32 +483,68 @@ If the event was translated and handled this function should return true, to ind
 If the function returns false, Remote will try to find a match using the automatic input registry defined with remote.define_auto_inputs().
 ]]--
 function remote_process_midi(event)
-	-- Custom Pads Note On / channel 10 keyboard
+	-- Custom Pads Note On / channel 10 <keyboard>
 	if event[1] == 153 and event.port == 2 then
-		g_cpads_last_note = event[2]
-		local note = g_cpads_note[event[2]]
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=note, velocity=event[3]})
-		return true
-	-- Custom Pads Note Off / channel 10 keyboard
-	elseif event[1] == 137 and event.port == 2 then
-		local note = g_cpads_note[event[2]]
-		remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=note, velocity=event[3]})
-		return true
-	-- Note On/Off [144 - 159] - [128-143]
-	-- Chords on channel 2 programming Custom Pads
-	elseif event[1] == 129 and event.port == 2 and g_shift_status then
-		-- do nothing
-		return true
-	elseif event[1] == 145 and event.port == 2 and g_shift_status then
-		g_cpads_note[g_cpads_last_note] = event[2]
-		return true
+		-- note on
+		if event[3] > 0 then
+			if g_cpad_status then
+				-- pass event
+				return true
+			end
+			if (g_cpads_note[event[2]]) then
+				for k,v in pairs(g_cpads_note[event[2]]) do
+					remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=v, velocity=event[3]})
+				end
+				return true
+			else
+				return false
+			end
+		-- note off
+		else
+			if g_cpad_status then
+				-- save current chord to current pad
+				g_cpads_note[event[2]] = {};
+				for k,v in pairs(g_current_chord) do
+					g_cpads_note[event[2]][v] = v
+				end
+				return true
+			end
+			if (g_cpads_note[event[2]]) then
+				for k,v in pairs(g_cpads_note[event[2]]) do
+					remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=v, velocity=event[3]})
+				end
+				return true
+			else
+				return false
+			end
+		end
+	-- Keyboard Note On [144 - 159] / channel 2
+	elseif event[1] == 145 and event.port == 2 then
+		-- note on
+		if event[3] > 0 then
+			-- add note to chord
+			g_current_chord[event[2]] = event[2]
+			g_cpad_status = true
+		-- note off
+		else
+			-- remove note from chord
+			g_current_chord[event[2]] = nil
+			g_cpad_status = false
+		end
+		return false
 	-- Session Pads converts to triggers/buttons
 	elseif event[1] == 144 and event.port == 1 then
+		if event[3] == 0 then -- ignore note off
+			return true
+		end
 		local index = g_pads[event[2]]
 		remote.handle_input({time_stamp=event.time_stamp, item=index, value=1})
 		return true
 	-- Drum Pads converts to triggers/buttons
 	elseif event[1] == 153 and event.port == 1 then
+		if event[3] == 0 then
+			return true -- ignore note off
+		end
 		local index = g_pads[event[2]]
 		remote.handle_input({time_stamp=event.time_stamp, item=index, value=1})
 		return true
