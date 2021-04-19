@@ -260,9 +260,9 @@ please, write me at:
 
 ## Donations
 
-- Give some stars to this repo.
+- Give some stars to this repo;
 - [Bank card](https://money.alfabank.ru/p2p/web/transfer/vshevchenko9518);
-- [QIWI](qiwi.com/n/DREAS236);
+- [QIWI](qiwi.com/n/DREAS236).
 
 ## License
 
