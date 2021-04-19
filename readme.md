@@ -1,24 +1,24 @@
 # Novation Launchkey Mini MK3 Ext
 
-![Launchkey Mini MK3](https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png =50%x)
+<img src="https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png" width="50%">
 
 Codec/script supporting [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini) in [Reason Studios](https://www.reasonstudios.com/en/reason).
 Works with Firmware update v1.1.
 
 If you are new, read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
 
-- [Install](##Install)
-	* [Mac](###Mac)
-	* [Windows](###Windows)
-	* [Setup in Reason](###Setup-in-Reason)
-- [Mapping](##Mapping)
-	* [Session layout](###Session-layout)
-	* [Custom Scales'n'Chords on Custom Pads](###Custom-Scales'n'Chords-on-Custom-Pads)
-	* [Redrum programming patterns](###Redrum-programming-patterns)
-	* [List of controls available for mapping](###List-of-controls-available-for-mapping)
-- [Support](##Support)
-- [Donations](##Donations)
-- [License](##License)
+- [Install](#Install)
+	* [Mac](#Mac)
+	* [Windows](#Windows)
+	* [Setup in Reason](#Setup-in-Reason)
+- [Mapping](#Mapping)
+	* [Session layout](#Session-layout)
+	* [Custom Scales'n'Chords on Custom Pads](#Custom-Scales'n'Chords-on-Custom-Pads)
+	* [Redrum programming patterns](#Redrum-programming-patterns)
+	* [List of controls available for mapping](#List-of-controls-available-for-mapping)
+- [Support](#Support)
+- [Donations](#Donations)
+- [License](#License)
 
 
 ## Install
