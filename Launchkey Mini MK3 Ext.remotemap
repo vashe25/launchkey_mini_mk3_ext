@@ -23,29 +23,21 @@ Map	Track Up		Target Previous Track
 Map	Track Down		Target Next Track
 Map	Shift Cliplaunch 1		Select Prev Patch for Target Device
 Map	Shift Cliplaunch 2		Select Next Patch for Target Device
-Map	Shifted Record		Loop On/Off
-Map	Shifted Play		Stop
+Map	Stop		Stop
 Map	Play		Play
 Map	Record		Record
 Map	Session Pad 1		Target Track Mute
 Map	Session Pad 2		Target Track Solo
 Map	Session Pad 9		Auto-quantize
+Map	Session Pad 10		Loop On/Off
+Map	Session Pad 5		Bar Position Down
+Map	Session Pad 6		Bar Position Up
 Map	Session Pad 7		Goto Left Locator
 Map	Session Pad 8		Goto Right Locator
+Map	Session Pad 13		Move Loop One bar Left
+Map	Session Pad 14		Move Loop One bar Right
 Map	Session Pad 15		Move Loop Left
 Map	Session Pad 16		Move Loop Right
-
-
-Scope	Propellerheads	Record Document
-//	Control Surface Item	Key	Remotable Item	Scale	Mode
-Map	Track Up		Target Next Track
-Map	Track Down		Target Previous Track
-Map	Shifted Record		Loop On/Off
-Map	Shifted Play		Stop
-Map	Play		Play
-Map	Record		Record
-Map	Session Pad 15		Move Loop One bar Left
-Map	Session Pad 16		Move Loop One bar Right
 
 
 Scope	Propellerheads	Reason Master Section

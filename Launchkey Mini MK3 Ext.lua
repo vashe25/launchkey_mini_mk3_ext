@@ -107,6 +107,7 @@ function remote_init(manufacturer, model)
 		{name="Pitch Bend", input="value", min=0, max=16383},
 		{name="Modulation", input="value", min=0, max=127},
 		{name="Sustain", input="value", min=0, max=127},
+		{name="Stop", input="button"},
 	}
 
 	remote.define_items(items)
@@ -283,6 +284,7 @@ Shift status 0 or 127
 ]]--
 g_shift_status = false
 
+g_play_status = false
 --[[
 Pot/pickup
 current values to compare with sended from control surface
@@ -496,8 +498,6 @@ function remote_process_midi(event)
 					remote.handle_input({time_stamp=event.time_stamp, item=91, value=1, note=v, velocity=event[3]})
 				end
 				return true
-			else
-				return false
 			end
 		-- note off
 		else
@@ -514,8 +514,6 @@ function remote_process_midi(event)
 					remote.handle_input({time_stamp=event.time_stamp, item=91, value=0, note=v, velocity=event[3]})
 				end
 				return true
-			else
-				return false
 			end
 		end
 	-- Keyboard Note On [144 - 159] / channel 2
@@ -531,7 +529,6 @@ function remote_process_midi(event)
 			g_current_chord[event[2]] = nil
 			g_cpad_status = false
 		end
-		return false
 	-- Session Pads converts to triggers/buttons
 	elseif event[1] == 144 and event.port == 1 then
 		if event[3] == 0 then -- ignore note off
@@ -594,15 +591,52 @@ function remote_process_midi(event)
 				remote.handle_input({time_stamp=event.time_stamp, item=knob_index, value=event[3]})
 			end
 			return true
-		-- Shifted Play & Record
-		elseif (event[2] == 115 or event[2] == 117) and g_shift_status then
-			local button_index = 89
-			if event[2] == 117 then
-				button_index = 90
+		-- Play & Record
+		elseif (event[2] == 115 or event[2] == 117) then
+			-- ignore note off
+			if event[3] == 0 then
+				return true
 			end
-			remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
-			return true
+			-- Shifted
+			if g_shift_status then
+				local button_index = 89
+				if event[2] == 117 then
+					button_index = 90
+				end
+				remote.handle_input({time_stamp=event.time_stamp, item=button_index, value=event[3]})
+				return true
+			else
+				if event[2] == 115 then
+					-- Stop
+					if g_play_status then
+						g_play_status = false
+						remote.handle_input({time_stamp=event.time_stamp, item=95, value=event[3]})
+						return true
+					-- Play
+					else
+						g_play_status = true
+					end
+				else
+					-- Record
+					if g_play_status == false then
+						g_play_status = true
+					end
+				end
+			end
 		end
 	end
 	return false
 end
+
+function remote_deliver_midi(maxbytes, port)
+	local events = {}
+	if port == 1 then
+		if g_cpad_status then
+			table.insert(events, remote.make_midi("b0 69 05"));
+		else
+			table.insert(events, remote.make_midi("b0 69 00"));
+		end
+	end
+	return events
+end
+

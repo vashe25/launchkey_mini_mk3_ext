@@ -1,24 +1,152 @@
 # Novation Launchkey Mini MK3 Ext
 
-![Launchkey Mini MK3](https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png)
+![Launchkey Mini MK3](https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png =50%x)
 
-It's a codec/script for [Propellerhead Reason](https://www.reasonstudios.com/en/reason) to support [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini).
-The main idea is to make support of *all layouts* and share it with "MK3 + Reason" users.
+Codec/script supporting [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini) in [Reason Studios](https://www.reasonstudios.com/en/reason).
+Works with Firmware update v1.1.
 
-If you are new, recommend you to read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
+If you are new, read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
+
+- [Install](##Install)
+	* [Mac](###Mac)
+	* [Windows](###Windows)
+	* [Setup in Reason](###Setup-in-Reason)
+- [Mapping](##Mapping)
+	* [Session layout](###Session-layout)
+	* [Custom Scales'n'Chords on Custom Pads](###Custom-Scales'n'Chords-on-Custom-Pads)
+	* [Redrum programming patterns](###Redrum-programming-patterns)
+	* [List of controls available for mapping](###List-of-controls-available-for-mapping)
+- [Support](##Support)
+- [Donations](##Donations)
+- [License](##License)
 
 
-## Layouts
+## Install
 
-Hold Shift + Pad to switch layout.
+All you need is to copy files into Reason Remote codec's folder
+and setup Novation Launchkey Mini MK3 in Reason's preferences.
+
+### Mac
+
+Just run shell script `install-macos.sh` or copy files:
+
+```
+Launchkey Mini MK3 Ext.lua
+Launchkey Mini MK3 Ext.luacodec
+Launchkey Mini MK3 Ext.png
+```
+to
+`/Library/Application Support/Propellerhead Software/Remote/Codecs/Lua Codecs/Novation/`
+and
+```
+Launchkey Mini MK3 Ext.remotemap
+```
+to
+`/Library/Application Support/Propellerhead Software/Remote/Maps/Novation/`
+
+### Windows
+
+Run `install-winxp.bat` if you use *Windows XP*
+or `install-win7-or-later.bat` if you use *Windows 7 or later*.
+
+Ofcourse you can copy files by yourself:
+```
+Launchkey Mini MK3 Ext.lua
+Launchkey Mini MK3 Ext.luacodec
+Launchkey Mini MK3 Ext.png
+```
+to the followinig location, note that Windows Version determines path.
+
+*Windows XP*
+```
+C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
+```
+
+*Windows 7 or later*
+```
+C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
+```
+and
+```
+Launchkey Mini MK3 Ext.remotemap
+```
+
+to the followinig location, note that Windows Version determines path.
+
+*Windows XP*
+```
+C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Maps\Novation\
+```
+
+*Windows 7 or later*
+```
+C:\ProgramData\Propellerhead Software\Remote\Maps\Novation\
+```
+
+### Setup in Reason
+
+Go to **Preferences** -> **Control Surfaces** and hit **Auto-detect Surfaces** button.
+Or you can add **Launchkey Mini MK3 Ext** manualy.
+
+## Mapping
+
+Hold [Shift] + [ * Pad] to switch layout.
 
 |Pads|||Knobs||||||
 |--|--|--|--|--|--|--|--|--|
 |Session|Drum|Custom|Device|Volume|Pan|Send A|Send B|Custom|
 
-## Controls list and Mapping
+Drum Pads and Device Knobs layouts mapping you can see in *Launchkey Mini MK3 Ext.remotemap*.
+Session Pads layout is used for controlling sequencer features.
+Custom Pads layout customized with [Novation's Components](https://novationmusic.com/en/components) and
+easy mapped, see section Custom Scales'n'Chords on Custom Pads.
+Volume Knobs, Pan Knobs, Send A Knobs, Send B Knobs, Custom Knobs are free
+and available for mapping.
 
-Available entities for mapping:
+### Session layout
+
+|    Session Pads   |                   |   |   |                        |                         |                   |                    |        [Shift] + [Cliplaunch]       |
+|:-----------------:|:-----------------:|:-:|:-:|:----------------------:|:-----------------------:|:-----------------:|:------------------:|:-----------------------------------:|
+| Target Track Mute | Target Track Solo |   |   |    Bar Position Down   |     Bar Position Up     | Goto Left Locator | Goto Right Locator | Select Prev Patch for Target Device |
+|   Auto-quantize   |    Loop On/Off    |   |   | Move Loop One bar Left | Move Loop One bar Right |   Move Loop Left  |   Move Loop Right  | Select Next Patch for Target Device |
+
+
+|      [Track Left]     |   [Track Right]   |
+|:---------------------:|:-----------------:|
+| Target Previous Track | Target Next Track |
+
+
+|   [Play]  |    [Record]   |
+|:---------:|:-------------:|
+| Play/Stop | Record On/Off |
+
+
+### Custom Scales'n'Chords on Custom Pads
+This feature provide programming any note or chord onto pad in Custom Pad layout on the fly.
+It works with keyboard on the second midi-channel:
+1. [Shift] + [Custom Pad] = switch Custom Pad layout
+2. [Shift] + [Transpose] + [Channel 2] = select second midi-channel for keyboard
+
+3. Now hold note/chord on the keyboard. [Cliplaunch 2] will red lights on.
+4. Hit a pad/pads which you want to store the note/chord.
+5. Release note/chord.
+
+6. When all Scale'n'Chords mapping is done,
+select back first midi-channel for keyboard = [Shift] + [Transpose] + [Channel 1].
+
+### Redrum programming patterns
+1. Select Redrum track at the sequencer.
+1. [Shift] + [Device Pad] = switch knobs to Device layout.
+2. [Shift] + [Drum Pad] = switch to Drum layout.
+4. Push some pads to make a pattern.
+5. Hit [Cliplaunch 1] to play/stop pattern.
+
+- [Knob 1] or [Keyboard] range from C0 to A0 selects sample slot.
+- [Knob 2] selects pattern in bank.
+- [Knob 3] selects bank.
+
+### List of controls available for mapping
+
 ```
 Custom Knob 1
 Custom Knob 2
@@ -123,151 +251,18 @@ Pitch Bend
 Modulation
 Sustain
 ```
-Basic mapping done. Check it in *Launchkey Mini MK3 Ext.remotemap*.
-Development continues.
-Of course you can use this script and make a map that you dream for.
-[Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote)
-
-### Basic mapping
-| Control | Function |
-|--|--|
-| *Play* | Play |
-| *Shift* + *Play* | Stop |
-| *Record* | Record On/Off |
-| *Shift* + *Record* | Loop On/Off |
-| *Shift* + *Track Left/Right* | Prev/Next track in sequencer |
-| *Shift* + *Cliplaunch 1/2* | Prev/Next device patch |
-
-In basic mapping i programm *Drum Pads* and *Device Knobs* layouts.
-
-*Session Pads* layout i'll plan to program some global features
-like shifting loop markers (15 & 16 pads).
-
-*Custom Pads* layout operates like notes.
-Use [Novation's Components](https://novationmusic.com/en/components) for mapping it.
-
-Other layouts is available for mapping in your projects:
-- *Volume Knobs*
-- *Pan Knobs*
-- *Send A Knobs*
-- *Send B Knobs*
-- *Custom Knobs*
-
-## Features
-
-### Redrum programming patterns 😎
-Pads are steps in Redrum sequencer.
-
-1. Switch knobs to *Device layout*.
-2. Switch pads to *Drum layout*.
-3. Select Redrum track in sequencer.
-4. Push some pads to make a pattern.
-5. And hit *Cliplaunch 1* to play pattern.
-
-- Select sample slot by *Knob 1* or by keyboard range from C0 to A0.
-- *Knob 2* selects pattern in bank.
-- *Knob 3* selects bank.
-- *Pads* is a 16 steps.
-- *Cliplaunch 1* is a play/stop.
-
-Now you have drum machine!
-
-### Custom Pads Scales
-This feature provide programming scales for Custom Pads mode on the fly.
-Shift + Keyboard on channel 2 used to set note for pad.
-Each pad can remembers only one note.
-Chord mode i'll release in the future - where one pad can trigger two, three or more notes.
-
-1. Select Custom Pads mode, hold [Shift] + [Custom Pad]
-2. Switch Keyboard into the second channel, hold [Shift + Transpose] + [Drum Pad]
-Now, you are ready to program scales.
-3. Trigger any pad, it remembers last one.
-4. Hold [Shift] + any key on Keyboard you want
-5. Do steps 3 - 4 with all pads, then switch Keyboard to
-channel 1, hold [Shift + Transpose] + [Session Pad].
-
-Done!
-
-## Install
-
-All you need is to copy files into Reason Remote codec's folder
-and setup Novation Launchkey Mini MK3 in Reason's preferences.
-
-### Mac
-
-Just run shell script `install-macos.sh` or copy files:
-
-```
-Launchkey Mini MK3 Ext.lua
-Launchkey Mini MK3 Ext.luacodec
-Launchkey Mini MK3 Ext.png
-```
-to
-`/Library/Application Support/Propellerhead Software/Remote/Codecs/Lua Codecs/Novation/`
-and
-```
-Launchkey Mini MK3 Ext.remotemap
-```
-to
-`/Library/Application Support/Propellerhead Software/Remote/Maps/Novation/`
-
-### Windows
-
-Run `install-winxp.bat` if you use *Windows XP*
-or `install-win7-or-later.bat` if you use *Windows 7 or later*.
-
-Ofcourse you can copy files by yourself:
-```
-Launchkey Mini MK3 Ext.lua
-Launchkey Mini MK3 Ext.luacodec
-Launchkey Mini MK3 Ext.png
-```
-to the followinig location, note that Windows Version determines path.
-
-*Windows XP*
-```
-C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
-```
-
-*Windows 7 or later*
-```
-C:\ProgramData\Propellerhead Software\Remote\Codecs\Lua Codecs\Novation\
-```
-and
-```
-Launchkey Mini MK3 Ext.remotemap
-```
-
-to the followinig location, note that Windows Version determines path.
-
-*Windows XP*
-```
-C:\Documents and Settings\All Users\Application Data\Propellerhead Software\Remote\Maps\Novation\
-```
-
-*Windows 7 or later*
-```
-C:\ProgramData\Propellerhead Software\Remote\Maps\Novation\
-```
-
-### Setup in Reason
-
-Go to **Preferences** -> **Control Surfaces** and hit **Auto-detect Surfaces** button.
-Or you can add **Launchkey Mini MK3 Ext** manualy.
 
 ## Support
-
-Write me at:
+If you found a bug or have an idea how to improve,
+please, write me at:
 - [Facebook](https://www.facebook.com/ekzitplanet/)
 - [Soundcloud](https://soundcloud.com/ekzitplanet)
 
-I'll be glad to know if this script gives you a better experience using MK3 with Reason.
-
 ## Donations
 
+- Give some stars to this repo.
 - [Bank card](https://money.alfabank.ru/p2p/web/transfer/vshevchenko9518);
 - [QIWI](qiwi.com/n/DREAS236);
-- Or give some stars to this repo.
 
 ## License
 
