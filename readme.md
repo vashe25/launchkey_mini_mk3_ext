@@ -255,7 +255,7 @@ Sustain
 ## Support
 If you found a bug or have an idea how to improve,
 please, write me at:
-- [Facebook](https://www.facebook.com/ekzitplanet/)
+- [Facebook](https://www.facebook.com/vashe25/)
 - [Soundcloud](https://soundcloud.com/ekzitplanet)
 - [Telegram](https://t.me/vashe)
 - [Wapp](https://wa.me/66630859464)
