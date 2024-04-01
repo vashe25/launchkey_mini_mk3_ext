@@ -257,12 +257,14 @@ If you found a bug or have an idea how to improve,
 please, write me at:
 - [Facebook](https://www.facebook.com/ekzitplanet/)
 - [Soundcloud](https://soundcloud.com/ekzitplanet)
+- [Telegram](https://t.me/vashe)
+- [Wapp](https://wa.me/66630859464)
 
 ## Donations
 
 - Give some stars to this repo;
-- [Bank card](https://money.alfabank.ru/p2p/web/transfer/vshevchenko9518);
-- [QIWI](qiwi.com/n/DREAS236).
+- It's always good to hear from you some warmy thankful words;
+- If you wish to say "thank you" in crypto, then contact me for details.
 
 ## License
 
