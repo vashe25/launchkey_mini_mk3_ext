@@ -253,7 +253,7 @@ Sustain
 ```
 
 ## Support
-If you found a bug or have an idea how to improve,
+If you've found a bug or have an idea how to improve,
 please, write me at:
 - [Facebook](https://www.facebook.com/vashe25/)
 - [Soundcloud](https://soundcloud.com/ekzitplanet)
