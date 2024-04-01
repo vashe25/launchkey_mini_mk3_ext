@@ -1,6 +1,6 @@
 # Novation Launchkey Mini MK3 Ext
 
-<img src="https://novationmusic.com/sites/novation/files/LKM-overhead-1018-530.png" width="50%">
+<img src="https://cdn11.bigcommerce.com/s-itgb7ssiy1/images/stencil/1280w/image-manager/lkmini-overhead-2400-x-2400-compressed.png" width="50%">
 
 Codec/script supporting [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini) in [Reason Studios](https://www.reasonstudios.com/en/reason).
 Works with Firmware update v1.1.
