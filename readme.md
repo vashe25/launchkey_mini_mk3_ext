@@ -2,10 +2,10 @@
 
 <img src="https://cdn11.bigcommerce.com/s-itgb7ssiy1/images/stencil/1280w/image-manager/lkmini-overhead-2400-x-2400-compressed.png" width="50%">
 
-Codec/script supporting [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini) in [Reason Studios](https://www.reasonstudios.com/en/reason).
+Codec/script supporting [Launchkey Mini MK3](https://novationmusic.com/en/keys/launchkey-mini) in [Reason Studios](https://www.reasonstudios.com/reason).
 Works with Firmware update v1.1.
 
-If you are new, read [Prop's blog about Control Remote](https://www.reasonstudios.com/blog/control-remote).
+If you are new, read [Prop's blog about Control Remote](https://www.reasonstudios.com/news/post/control-remote).
 
 - [Install](#Install)
 	* [Mac](#Mac)
