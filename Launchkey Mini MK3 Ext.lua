@@ -369,11 +369,8 @@ curr_value - value stored by remote into g_knobs
 ]]
 function mute(new_value, curr_value)
 	-- difference between values
-	if new_value == curr_value or math.abs(new_value - curr_value) < 10 then
-		return true
-	else
-		return false
-	end
+	local diff = new_value - curr_value
+    return diff > -10 and diff < 10
 end
 
 --[[
