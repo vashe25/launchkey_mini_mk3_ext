@@ -629,14 +629,15 @@ function remote_process_midi(event)
 end
 
 function remote_deliver_midi(maxbytes, port)
-	local events = {}
-	if port == 1 then
-		if g_cpad_status then
-			table.insert(events, remote.make_midi("b0 69 05"));
-		else
-			table.insert(events, remote.make_midi("b0 69 00"));
-		end
-	end
-	return events
+	if port ~= 1 then
+        return {}
+    end
+
+    if g_cpad_status then
+    	-- turn light on
+        return {remote.make_midi("b0 69 05")}
+    end
+    -- turn light off
+    return {remote.make_midi("b0 69 00")}
 end
 
