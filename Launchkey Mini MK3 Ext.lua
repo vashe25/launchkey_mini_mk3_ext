@@ -384,12 +384,15 @@ The new machine is later used to compare with a delivered machine state when rem
 ]]
 function remote_set_state(changed_items)
 	-- update knobs state, set current values
-	for i, item_index in ipairs(changed_items) do
-		if item_index < 49 then
-			local ki = item_index - g_knob_mode * 8
-			g_knobs[ki] = remote.get_item_value(item_index)
-		end
-	end
+	local first = g_knob_mode * 8 + 1
+    local last = first + 7
+
+    for _, item_index in ipairs(changed_items) do
+        if item_index >= first and item_index <= last then
+            local ki = item_index - first + 1
+            g_knobs[ki] = remote.get_item_value(item_index)
+        end
+    end
 end
 
 --[[ listener
